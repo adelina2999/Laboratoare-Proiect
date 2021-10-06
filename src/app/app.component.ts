@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import {UserInterface} from "./user.interface";
+import {PizzaInterface} from "./pizza.interface";
 
 @Component({
   selector: 'app-root',
@@ -8,13 +8,13 @@ import {UserInterface} from "./user.interface";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'List of users';
-  users: UserInterface[] = [];
+  title = 'List of pizzas';
+  pizzas: PizzaInterface[] = [];
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.http.get<UserInterface[]>('https://jsonplaceholder.typicode.com/users').subscribe(res => {
-      this.users = res;
+    this.http.get<PizzaInterface[]>('http://localhost:5050/pizzas').subscribe(res => {
+      this.pizzas = res;
     })
 
 
