@@ -1,0 +1,84 @@
+.top {
+  position:fixed;
+  width:100%;
+  z-index:1;
+  top:0
+}
+
+.hide-small {
+  display:none!important
+}
+
+.bar {
+  width:100%;
+  overflow:hidden;
+  display:inline-block;
+  width:auto
+}
+
+.xlarge {
+  font-size:24px!important
+}
+
+.black {
+  color:#fff!important;
+  background-color:#000!important
+}
+
+.opacity{
+  opacity:0.60
+}
+
+.hover-opacity-off:hover {
+  opacity:1
+}
+
+.bar-item {
+  padding:8px 16px;
+  float:left;
+  width:auto;
+  border:none;
+  display:block;
+  outline:0;
+  width:100%;
+  display:block;
+  padding:8px 16px;
+  text-align:left;
+  border:none;
+  white-space:normal;
+  float:none;
+  outline:0;
+  text-align:center
+}
+
+button {
+  width:100%;
+  border:none;
+  display:inline-block;
+  padding:8px 16px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  background-color:inherit;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  cursor:not-allowed;
+  opacity:0.3;
+  width:100%;
+  text-align:left;
+  padding:8px 16px;
+  white-space:normal
+}
+
+.button:hover {
+  color:#000!important;
+  background-color:#ccc!important
+}
