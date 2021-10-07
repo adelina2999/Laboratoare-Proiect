@@ -10,6 +10,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { HomeComponent } from "./components/home/app-home";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { AboutUsComponent } from "./components/aboutUs/aboutUs.component";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     ContactsComponent,
     MenuComponent,
     AppHeader,
-    HomeComponent
+    HomeComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
