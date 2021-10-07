@@ -1,0 +1,9 @@
+<div *ngIf="pizzas.length">
+  <p class="text-color">{{ title }}</p>
+  <li *ngFor="let pizza of pizzas">
+    <span>Name: {{ pizza.name }}</span>
+    <span>Price: {{ pizza.price }}</span>
+    <span>Available: {{ pizza.in_stock ? "YES" : "NO" }}</span>
+  </li>
+
+</div>
