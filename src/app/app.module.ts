@@ -9,6 +9,7 @@ import { MenuComponent } from "./components/menu/menu.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HomeComponent } from "./components/home/app-home";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
