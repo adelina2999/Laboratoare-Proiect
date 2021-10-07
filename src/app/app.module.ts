@@ -11,6 +11,7 @@ import { HomeComponent } from "./components/home/app-home";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AboutUsComponent } from "./components/aboutUs/aboutUs.component";
+import { AppFooter } from "./components/footer/app-footer";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AboutUsComponent } from "./components/aboutUs/aboutUs.component";
     MenuComponent,
     AppHeader,
     HomeComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    AppFooter
   ],
   imports: [
     BrowserModule,
