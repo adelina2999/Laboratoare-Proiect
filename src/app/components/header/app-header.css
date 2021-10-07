@@ -12,8 +12,6 @@
 .bar {
   width:100%;
   overflow:hidden;
-  display:inline-block;
-  width:auto
 }
 
 .xlarge {
@@ -35,7 +33,7 @@
 
 .bar-item {
   padding:8px 16px;
-  float:left;
+  float:right;
   width:auto;
   border:none;
   display:block;
