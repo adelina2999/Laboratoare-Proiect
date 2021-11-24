@@ -1,3 +1,26 @@
 <div>
-  contacts
+  <div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+    <div class="w3-content">
+      <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Contact</h1>
+      <p>Find us at some address at some place or call us at 05050515-122330</p>
+      <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
+      <p class="w3-xxlarge"><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
+        <form [formGroup]="rezervariForm">
+          <input type="text" formControlName="nume" placeholder="Nume" />
+          <span *ngIf="rezervariForm.controls.nume.dirty && rezervariForm.controls.nume.errors?.required">
+            Numele este obligatoriu.
+          </span>
+          <input type="number" formControlName="cati_oameni" placeholder="cati_oameni" />
+          <span *ngIf="rezervariForm.controls.cati_oameni.dirty && rezervariForm.controls.cati_oameni.errors?.required">
+            Specificați numărul de persoane.
+          </span>
+          <input type="date" formControlName="data" placeholder="data" />
+          <span *ngIf="rezervariForm.controls.data.dirty && rezervariForm.controls.data.errors?.required">
+            Specificați data.
+          </span>
+          <input type="text" formControlName="mesaj" placeholder="Lăsați un mesaj dacă aveți careva cerințe" />
+          <button (click)="trimiteRezervare()"></button>
+        </form>
+    </div>
+  </div>
 </div>

@@ -12,6 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { AboutUsComponent } from "./components/aboutUs/aboutUs.component";
 import { AppFooter } from "./components/footer/app-footer";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AppFooter } from "./components/footer/app-footer";
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   exports: [RouterModule],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],

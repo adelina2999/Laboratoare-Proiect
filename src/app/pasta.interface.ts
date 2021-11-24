@@ -1,5 +1,5 @@
-export interface PizzaInterface {
-  id_pizza: Number;
+export interface PastaInterface {
+  id_pasta: Number;
   name: string;
   price: Number;
   in_stock: boolean;
