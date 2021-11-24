@@ -29,7 +29,10 @@ export class ContactsComponent {
       nume: this.rezervariForm.value.nume
     }
     this.http.post<RezervariInterface>('http://localhost:5050/rezervari', form).subscribe(res => {
-      console.log(res);
+      if(res.data) {
+        alert("Mesajul a fost transmis!!!");
+      }
+      this.rezervariForm.reset();
     })
   }
 }
