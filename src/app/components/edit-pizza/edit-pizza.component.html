@@ -1,0 +1,28 @@
+<div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+    <div class="w3-content">
+      <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Editare pizza</h1>
+        <form [formGroup]="pizzaForm">
+          <p><input class="w3-input w3-padding-16 w3-border" type="text" formControlName="name" placeholder="Nume" [value]="pizzaForm.value.name"/></p>
+          <span *ngIf="pizzaForm.controls.name.dirty && pizzaForm.controls.name.errors?.required">
+            Numele este obligatoriu.
+          </span>
+          <p><input class="w3-input w3-padding-16 w3-border" type="number" formControlName="price" placeholder="Pretul"
+                    [value]="pizzaForm.value.price"/></p>
+          <span *ngIf="pizzaForm.controls.price.dirty && pizzaForm.controls.price.errors?.required">
+            Specificați pretul.
+          </span>
+          <p><input class="w3-input w3-padding-16 w3-border" type="number" formControlName="greutate" placeholder="greutate"
+                    [value]="pizzaForm.value.greutate"/></p>
+          <span *ngIf="pizzaForm.controls.greutate.dirty && pizzaForm.controls.greutate.errors?.required">
+            Specificați greutatea.
+          </span>
+          <p><input class="w3-input w3-padding-16 w3-border" type="text" formControlName="ingrediente" placeholder="ingrediente"
+                    [value]="pizzaForm.value.ingrediente" /></p>
+          <span *ngIf="pizzaForm.controls.ingrediente.dirty && pizzaForm.controls.ingrediente.errors?.required">
+            Specificați ingredientele.
+          </span>
+          <button class="w3-button w3-light-grey w3-block" (click)="editare()">Editare</button>
+        </form>
+    </div>
+</div>
+

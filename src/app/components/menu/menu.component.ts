@@ -16,7 +16,9 @@ export class MenuComponent implements OnInit {
   pizzas: PizzaInterface[] = [];
   pastas: PastaInterface[] = [];
   startere: StartereInterface[] = [];
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit(): void {
     this.getPizza()
@@ -41,4 +43,9 @@ export class MenuComponent implements OnInit {
       this.startere = res;
     })
   }
+
+  isLoggedIn() {
+    return localStorage.getItem('dataLogin');
+  }
 }
+

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {StartereInterface} from "../../startere.interface";
 import {HttpClient} from "@angular/common/http";
 import {RezervariInterface} from "../../rezervari.interface";
 

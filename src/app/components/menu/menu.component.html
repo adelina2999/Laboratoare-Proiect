@@ -2,40 +2,54 @@
 
 <nav ngbNav #nav="ngbNav" class="nav-tabs">
   <ng-container ngbNavItem>
-    <a ngbNavLink>One</a>
+    <a ngbNavLink>Pizza</a>
     <ng-template ngbNavContent>
-      <div *ngIf="pizzas.length">
-        <p class="text-color">{{ titlePizza }}</p>
-        <li *ngFor="let pizza of pizzas">
-          <span>Name: {{ pizza.name }}</span>
-          <span>Price: {{ pizza.price }}</span>
-          <span>Available: {{ pizza.in_stock ? "YES" : "NO" }}</span>
-        </li>
+      <div *ngIf="!(isLoggedIn())">
+        <div *ngIf="pizzas.length">
+          <p class="text-color">{{ titlePizza }}</p>
+          <li *ngFor="let pizza of pizzas">
+            <span>Name: {{ pizza.name }}</span>
+            <span> Price: {{ pizza.price }}</span>
+            <span> Available: {{ pizza.in_stock ? "YES" : "NO" }}</span>
+          </li>
+        </div>
+      </div>
+      <div *ngIf="isLoggedIn()">
+        <div *ngIf="pizzas.length">
+          <p class="text-color">{{ titlePizza }}</p>
+          <li *ngFor="let pizza of pizzas">
+            <span> Name: {{ pizza.name }}</span>
+            <span> Price: {{ pizza.price }}</span>
+            <span> Available: {{ pizza.in_stock ? "YES" : "NO" }}</span>
+            <a class="w3-button w3-white w3-border w3-border-red w3-round-large" [routerLink]="['/edit-pizza', pizza.id_pizza]" [queryParams]="pizza">Editare</a>
+          </li>
+        </div>
+
       </div>
     </ng-template>
   </ng-container>
   <ng-container ngbNavItem>
-    <a ngbNavLink>Two</a>
+    <a ngbNavLink>Salate</a>
     <ng-template ngbNavContent>
       <div *ngIf="pastas.length">
         <p class="text-color">{{ titlePasta }}</p>
         <li *ngFor="let pasta of pastas">
           <span>Name: {{ pasta.name }}</span>
-          <span>Price: {{ pasta.price }}</span>
-          <span>Available: {{ pasta.in_stock ? "YES" : "NO" }}</span>
+          <span> Price: {{ pasta.price }}</span>
+          <span> Available: {{ pasta.in_stock ? "YES" : "NO" }}</span>
         </li>
       </div>
     </ng-template>
   </ng-container>
   <ng-container ngbNavItem>
-    <a ngbNavLink>Three</a>
+    <a ngbNavLink>Startere</a>
     <ng-template ngbNavContent>
       <div *ngIf="startere.length">
         <p class="text-color">{{ titleStartere }}</p>
         <li *ngFor="let starter of startere">
           <span>Name: {{ starter.name }}</span>
-          <span>Price: {{ starter.price }}</span>
-          <span>Available: {{ starter.in_stock ? "YES" : "NO" }}</span>
+          <span> Price: {{ starter.price }}</span>
+          <span> Available: {{ starter.in_stock ? "YES" : "NO" }}</span>
         </li>
       </div>
     </ng-template>

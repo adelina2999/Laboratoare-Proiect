@@ -1,0 +1,17 @@
+<div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
+    <div class="w3-content">
+      <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Login</h1>
+        <form [formGroup]="loginForm">
+          <p><input class="w3-input w3-padding-16 w3-border" type="text" formControlName="login" placeholder="Login" /></p>
+          <span *ngIf="loginForm.controls.login.dirty && loginForm.controls.login.errors?.required">
+            Numele este obligatoriu.
+          </span>
+          <p><input class="w3-input w3-padding-16 w3-border" type="password" formControlName="password" placeholder="Password" /></p>
+          <span *ngIf="loginForm.controls.password.dirty && loginForm.controls.password.errors?.required">
+            Specificați numărul de persoane.
+          </span>
+          <button class="w3-button w3-light-grey w3-block" (click)="send()">LOGIN</button>
+        </form>
+    </div>
+</div>
+

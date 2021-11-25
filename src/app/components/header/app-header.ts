@@ -7,4 +7,14 @@ import { Component } from "@angular/core";
 })
 
 export class AppHeader {
+
+  isLoggedIn() {
+    return localStorage.getItem('dataLogin');
+  }
+
+  delogare() {
+    localStorage.removeItem('dataLogin');
+    this.isLoggedIn();
+    alert("Delogare");
+  }
 }
