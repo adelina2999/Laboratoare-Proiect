@@ -1,17 +1,24 @@
-<nav class="w3-top w3-hide-small">
-  <div class="w3-top w3-hide-small">
-    <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off">
-        <a class="navbar-brand" routerLink="/">Foodify</a>
-        <a class="w3-bar-item w3-button" routerLink="/menu">MENIU <span class="sr-only">(current)</span></a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">Foodify</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        <a class="w3-bar-item w3-button" routerLink="/about-us">DESPRE NOI</a>
-
-        <a class="w3-bar-item w3-button" routerLink="/contacts">REZERVĂ O MASĂ</a>
-
-        <a *ngIf="!(isLoggedIn())" class="w3-bar-item w3-button" routerLink="/login">Login</a>
-        <a *ngIf="isLoggedIn()" (click)="delogare()" class="w3-bar-item w3-button">Delogare</a>
-
-    </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/menu">MENIU <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/about-us">DESPRE NOI </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/contacts">REZERVĂ O MASĂ </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <a *ngIf="!(isLoggedIn())" class="w3-bar-item w3-button btn btn-outline-success my-2 my-sm-0" routerLink="/login">LOGHEAZĂ-TE</a>
+      <a *ngIf="isLoggedIn()" (click)="delogare()" class="w3-bar-item w3-button btn btn-outline-danger my-2 my-sm-0">DELOGHEAZĂ-TE</a>
+    </form>
   </div>
 </nav>
-

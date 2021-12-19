@@ -5,8 +5,7 @@ import {RezervariInterface} from "../../rezervari.interface";
 
 @Component({
   selector: 'app-contacts',
-  templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.css']
+  templateUrl: './contacts.component.html'
 })
 export class ContactsComponent {
   rezervariForm: FormGroup;

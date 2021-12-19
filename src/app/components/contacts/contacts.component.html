@@ -1,26 +1,29 @@
 <div class="w3-container w3-padding-64 w3-blue-grey w3-grayscale-min w3-xlarge">
-    <div class="w3-content">
-      <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Rezervă o masă</h1>
-      <p>Ne puteți găsi la adresa str. 31 August 24 sau ne puteți contacta la numărul de telefon &nbsp; &nbsp; &nbsp; &nbsp; +(373) 22 123 123</p>
-      <p><span class="w3-tag">Catering!</span> Oferim servicii full de catering pentru orice eveniment, mare sau mic. Vă înțelegem
-        nevoile și vom livra mâncarea pentru a vă satisface dorințele, vizual și gustativ.</p>
-      <p class="w3-xxlarge"><strong>Rezervă</strong> o masă, întreabă meniul zilei sau pur și simplu ne poți transmite un mesaj:</p>
-        <form [formGroup]="rezervariForm">
-          <p><input class="w3-input w3-padding-16 w3-border" type="text" formControlName="nume" placeholder="Nume" /></p>
-          <span *ngIf="rezervariForm.controls.nume.dirty && rezervariForm.controls.nume.errors?.required">
-            Numele este obligatoriu.
-          </span>
-          <p><input class="w3-input w3-padding-16 w3-border" type="number" formControlName="cati_oameni" value="2021-11-16T20:00" placeholder="Numărul de persoane" /></p>
-          <span *ngIf="rezervariForm.controls.cati_oameni.dirty && rezervariForm.controls.cati_oameni.errors?.required">
-            Specificați numărul de persoane.
-          </span>
-          <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" formControlName="data" placeholder="data" /></p>
-          <span *ngIf="rezervariForm.controls.data.dirty && rezervariForm.controls.data.errors?.required">
-            Specificați data.
-          </span>
-          <p><input class="w3-input w3-padding-16 w3-border" type="text" formControlName="mesaj" placeholder="Lăsați un mesaj dacă aveți careva cerințe" /></p>
-          <button class="w3-button w3-light-grey w3-block" (click)="trimiteRezervare()">TRIMITE MESAJUL</button>
-        </form>
-    </div>
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">Rezervă o masă</h1>
+    <p>Ne puteți găsi la adresa str. 31 August 24 sau ne puteți contacta la numărul de telefon &nbsp; &nbsp; &nbsp; &nbsp; +(373) 22 123 123</p>
+    <p><span class="w3-tag">Catering!</span> Oferim servicii full de catering pentru orice eveniment, mare sau mic. Vă înțelegem nevoile și vom livra mâncarea pentru a vă satisface dorințele, vizual și gustativ.</p>
+    <p class="w3-xxlarge"><strong>Rezervă</strong> o masă, întreabă meniul zilei sau pur și simplu ne poți transmite un mesaj:</p>
+    <form [formGroup]="rezervariForm">
+
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" formControlName="nume" placeholder="Nume" /></p>
+      <span *ngIf="rezervariForm.controls.nume.dirty && rezervariForm.controls.nume.errors?.required">
+        Numele este obligatoriu.
+      </span>
+
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" formControlName="cati_oameni" value="2021-11-16T20:00" placeholder="Numărul de persoane" /></p>
+      <span *ngIf="rezervariForm.controls.cati_oameni.dirty && rezervariForm.controls.cati_oameni.errors?.required">
+        Specificați numărul de persoane.
+      </span>
+
+      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" formControlName="data" placeholder="data" /></p>
+      <span *ngIf="rezervariForm.controls.data.dirty && rezervariForm.controls.data.errors?.required">
+        Specificați data.
+      </span>
+
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" formControlName="mesaj" placeholder="Lăsați un mesaj dacă aveți careva cerințe" /></p>
+      <button class="w3-button w3-light-grey w3-block" (click)="trimiteRezervare()">TRIMITE MESAJUL</button>
+    </form>
+  </div>
 </div>
 

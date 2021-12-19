@@ -1,56 +1,63 @@
-<p>You can use alternative markup without <code>ul li</code> elements</p>
-
-<nav ngbNav #nav="ngbNav" class="nav-tabs">
+<nav ngbNav #nav="ngbNav" class="nav-tabs container w3-black w3-padding-64 w3-xxlarge">
   <ng-container ngbNavItem>
-    <a ngbNavLink>Pizza</a>
+    <a ngbNavLink class="w3-col s4 tablink w3-padding-large w3-hover-red">Pizza</a>
     <ng-template ngbNavContent>
-      <div *ngIf="!(isLoggedIn())">
+      <div class="container" *ngIf="!(isLoggedIn())">
         <div *ngIf="pizzas.length">
-          <p class="text-color">{{ titlePizza }}</p>
-          <li *ngFor="let pizza of pizzas">
-            <span>Name: {{ pizza.name }}</span>
-            <span> Price: {{ pizza.price }}</span>
-            <span> Available: {{ pizza.in_stock ? "YES" : "NO" }}</span>
-          </li>
+          <p class="text-color text-color w3-container menu w3-padding-32 w3-white">{{ titlePizza }}</p>
+          <div *ngFor="let pizza of pizzas">
+            <h1><span>{{ pizza.name }}</span>
+            <span class="w3-right w3-tag w3-dark-grey w3-round">{{ pizza.price }} lei</span>
+            </h1>
+            <span class="w3-text-grey">{{ pizza.ingrediente }} </span>
+            <hr>
+          </div>
         </div>
       </div>
-      <div *ngIf="isLoggedIn()">
+      <div class="container" *ngIf="isLoggedIn()">
         <div *ngIf="pizzas.length">
-          <p class="text-color">{{ titlePizza }}</p>
-          <li *ngFor="let pizza of pizzas">
-            <span> Name: {{ pizza.name }}</span>
-            <span> Price: {{ pizza.price }}</span>
-            <span> Available: {{ pizza.in_stock ? "YES" : "NO" }}</span>
+          <p class="text-color w3-container menu w3-padding-32 w3-white">{{ titlePizza }}</p>
+          <div *ngFor="let pizza of pizzas">
+            <h1><span>{{ pizza.name }}</span>
+            <span class="w3-right w3-tag w3-dark-grey w3-round">{{ pizza.price }} lei</span>
+              </h1>
+              <span class="w3-text-grey">{{ pizza.ingrediente }} </span>
             <a class="w3-button w3-white w3-border w3-border-red w3-round-large" [routerLink]="['/edit-pizza', pizza.id_pizza]" [queryParams]="pizza">Editare</a>
-          </li>
+            <hr>
+          </div>
         </div>
+      </div>
+    </ng-template>
+  </ng-container>
 
+  <ng-container ngbNavItem>
+    <a ngbNavLink class="w3-col s4 tablink w3-padding-large w3-hover-red">Paste</a>
+    <ng-template ngbNavContent>
+      <div class="container" *ngIf="pastas.length">
+        <p class="text-color w3-container menu w3-padding-32 w3-white">{{ titlePasta }}</p>
+        <div *ngFor="let pasta of pastas">
+          <h1><span>{{ pasta.name }}</span>
+          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ pasta.price }} lei</span>
+            </h1>
+          <span class="w3-text-grey">{{ pasta.ingrediente }} </span>
+          <hr>
+        </div>
       </div>
     </ng-template>
   </ng-container>
+
   <ng-container ngbNavItem>
-    <a ngbNavLink>Salate</a>
+    <a ngbNavLink class="w3-col s4 tablink w3-padding-large w3-hover-red">Startere</a>
     <ng-template ngbNavContent>
-      <div *ngIf="pastas.length">
-        <p class="text-color">{{ titlePasta }}</p>
-        <li *ngFor="let pasta of pastas">
-          <span>Name: {{ pasta.name }}</span>
-          <span> Price: {{ pasta.price }}</span>
-          <span> Available: {{ pasta.in_stock ? "YES" : "NO" }}</span>
-        </li>
-      </div>
-    </ng-template>
-  </ng-container>
-  <ng-container ngbNavItem>
-    <a ngbNavLink>Startere</a>
-    <ng-template ngbNavContent>
-      <div *ngIf="startere.length">
-        <p class="text-color">{{ titleStartere }}</p>
-        <li *ngFor="let starter of startere">
-          <span>Name: {{ starter.name }}</span>
-          <span> Price: {{ starter.price }}</span>
-          <span> Available: {{ starter.in_stock ? "YES" : "NO" }}</span>
-        </li>
+      <div class="container" *ngIf="startere.length">
+        <p class="text-color w3-container menu w3-padding-32 w3-white">{{ titleStartere }}</p>
+        <div *ngFor="let starter of startere">
+          <h1><span>{{ starter.name }}</span>
+          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ starter.price }} lei</span>
+            </h1>
+          <span class="w3-text-grey">{{ starter.ingrediente }} </span>
+          <hr>
+        </div>
       </div>
     </ng-template>
   </ng-container>
