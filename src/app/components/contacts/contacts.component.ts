@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
-import {RezervariInterface} from "../../rezervari.interface";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { HttpClient } from "@angular/common/http";
+import { RezervariInterface } from "../../rezervari.interface";
 
-@Component({
+@Component ({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html'
 })
 export class ContactsComponent {
   rezervariForm: FormGroup;
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor( private fb: FormBuilder, private http: HttpClient ) {
     this.rezervariForm = this.fb.group({
-      id: [''],
-      nume: ['', Validators.required],
-      cati_oameni: ['', Validators.compose([Validators.required, Validators.max(15)])],
-      data: ['', Validators.required],
-      mesaj: ['']
+      id: [ '' ],
+      nume: [ '', Validators.required ],
+      cati_oameni: [ '', Validators.compose([ Validators.required, Validators.max(15 )]) ],
+      data: [ '', Validators.required ],
+      mesaj: [ '' ]
     });
   }
 
@@ -27,8 +27,8 @@ export class ContactsComponent {
       nume: this.rezervariForm.value.nume
     }
     this.http.post<RezervariInterface>('http://localhost:5050/rezervari', form).subscribe(res => {
-      if(res.data) {
-        alert("Mesajul a fost transmis!!!");
+      if( res.data ) {
+        alert( "Mesajul a fost transmis!!!" );
       }
       this.rezervariForm.reset();
     })

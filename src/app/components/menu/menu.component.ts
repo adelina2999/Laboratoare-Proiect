@@ -7,7 +7,7 @@ import { StartereInterface } from "../../startere.interface";
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: [ './menu.component.css' ]
 })
 export class MenuComponent implements OnInit {
   titlePizza = 'Pizza';
@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
   pastas: PastaInterface[] = [];
   startere: StartereInterface[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor( private http: HttpClient ) {
   }
 
   ngOnInit(): void {

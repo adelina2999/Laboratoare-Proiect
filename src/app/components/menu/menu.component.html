@@ -6,8 +6,8 @@
         <div *ngIf="pizzas.length">
           <p class="text-color text-color w3-container menu w3-padding-32 w3-white">{{ titlePizza }}</p>
           <div *ngFor="let pizza of pizzas">
-            <h1><span>{{ pizza.name }}</span>
-            <span class="w3-right w3-tag w3-dark-grey w3-round">{{ pizza.price }} lei</span>
+            <h1><b><span>{{ pizza.name }}</span></b>
+              <span class="w3-right w3-tag w3-dark-grey w3-round">{{ pizza.price }} lei</span>
             </h1>
             <span class="w3-text-grey">{{ pizza.ingrediente }} </span>
             <hr>
@@ -18,9 +18,9 @@
         <div *ngIf="pizzas.length">
           <p class="text-color w3-container menu w3-padding-32 w3-white">{{ titlePizza }}</p>
           <div *ngFor="let pizza of pizzas">
-            <h1><span>{{ pizza.name }}</span>
-            <span class="w3-right w3-tag w3-dark-grey w3-round">{{ pizza.price }} lei</span>
-              </h1>
+            <h1><b><span>{{ pizza.name }}</span></b>
+              <span class="w3-right w3-tag w3-dark-grey w3-round">{{ pizza.price }} lei</span>
+            </h1>
               <span class="w3-text-grey">{{ pizza.ingrediente }} </span>
             <a class="w3-button w3-white w3-border w3-border-red w3-round-large" [routerLink]="['/edit-pizza', pizza.id_pizza]" [queryParams]="pizza">Editare</a>
             <hr>
@@ -36,9 +36,9 @@
       <div class="container" *ngIf="pastas.length">
         <p class="text-color w3-container menu w3-padding-32 w3-white">{{ titlePasta }}</p>
         <div *ngFor="let pasta of pastas">
-          <h1><span>{{ pasta.name }}</span>
-          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ pasta.price }} lei</span>
-            </h1>
+          <h1><b><span>{{ pasta.name }}</span></b>
+            <span class="w3-right w3-tag w3-dark-grey w3-round">{{ pasta.price }} lei</span>
+          </h1>
           <span class="w3-text-grey">{{ pasta.ingrediente }} </span>
           <hr>
         </div>
@@ -52,9 +52,9 @@
       <div class="container" *ngIf="startere.length">
         <p class="text-color w3-container menu w3-padding-32 w3-white">{{ titleStartere }}</p>
         <div *ngFor="let starter of startere">
-          <h1><span>{{ starter.name }}</span>
-          <span class="w3-right w3-tag w3-dark-grey w3-round">{{ starter.price }} lei</span>
-            </h1>
+          <h1><b><span>{{ starter.name }}</span></b>
+            <span class="w3-right w3-tag w3-dark-grey w3-round">{{ starter.price }} lei</span>
+          </h1>
           <span class="w3-text-grey">{{ starter.ingrediente }} </span>
           <hr>
         </div>

@@ -1,4 +1,4 @@
-export interface RezervariInterface{
+export interface RezervariInterface {
   id: Number;
   nume: string;
   cati_oameni: Number;

@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
-import {LoginInterface} from "../../login.interface";
-import {Router} from "@angular/router";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { HttpClient } from "@angular/common/http";
+import { LoginInterface } from "../../login.interface";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-contacts',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: [ './login.component.css' ]
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+  constructor( private fb: FormBuilder, private http: HttpClient, private router: Router ) {
     this.loginForm = this.fb.group({
-      id: [''],
-      login: ['', Validators.required],
-      password: ['', Validators.required],
+      id: [ '' ],
+      login: [ '', Validators.required ],
+      password: [ '', Validators.required ],
     });
   }
 
@@ -26,11 +26,11 @@ export class LoginComponent {
     }
     this.http.get<LoginInterface>(`http://localhost:5050/login?login=${form.login}&password=${form.password}`).subscribe(res => {
       if(res.login === null && res.password === null) {
-        alert("Parola sau login gresit")
+        alert( "Parola sau numele de utilizator este greșit" )
       } else {
-        alert("Logare reusita");
+        alert( "Logare reusită" );
         this.router.navigate(['/']);
-        localStorage.setItem('dataLogin', res.id.toString());
+        localStorage.setItem( 'dataLogin', res.id.toString() );
         this.loginForm.reset();
       }
     })
